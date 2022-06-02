@@ -1,0 +1,10 @@
+---
+
+- name: Run basic PowerShell script
+  hosts: windows
+  become: yes
+  tasks:
+     - name: Run basic PowerShell script
+       ansible.windows.win_powershell:
+         script: |
+           New-Item -Path "C:\" -Name "Test" -ItemType Directory -Force
